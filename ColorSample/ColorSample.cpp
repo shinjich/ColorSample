@@ -96,7 +96,7 @@ uint32_t KinectProc()
 		// カラーイメージを取得する
 		hImage = k4a_capture_get_color_image( hCapture );
 
-		// キャプチャーを開放する
+		// キャプチャーを解放する
 		k4a_capture_release( hCapture );
 
 		if ( hImage )
@@ -109,7 +109,7 @@ uint32_t KinectProc()
 				uImageSize = (uint32_t) k4a_image_get_size( hImage );
 				CopyMemory( g_pdwPixel, p, uImageSize );
 			}
-			// イメージを開放する
+			// イメージを解放する
 			k4a_image_release( hImage );
 		}
 	}
@@ -126,18 +126,20 @@ void WriteCSV()
 		for( int y = 0; y < RESOLUTION_HEIGHT; y++ )
 		{
 			// カラー情報を CSV に出力
-			char szText[8192] = "";
+			char szTmp[8];
+			char szText[RESOLUTION_WIDTH * sizeof(szTmp)] = "";
 			for( int x = 0; x < RESOLUTION_WIDTH; x++ )
 			{
 				const DWORD dw = g_pdwPixel[y * RESOLUTION_WIDTH + x];
 				const BYTE c = ((dw & 0xFF) + ((dw >> 8) & 0xFF) + ((dw >> 16) & 0xFF)) / 3;
-				sprintf_s( szText, 8192, "%s%d,", szText, c );
+				sprintf_s( szTmp, 8, "%d,", c );
+				strcat_s( szText, RESOLUTION_WIDTH * sizeof(szTmp), szTmp );
 			}
 
 			// 改行してファイル出力
+			strcat_s( szText, RESOLUTION_WIDTH * sizeof(szTmp), "\r\n" );
+			const DWORD dwLen = (DWORD) strlen( szText );
 			DWORD dwWritten;
-			DWORD dwLen = (DWORD) strlen( szText );
-			strcpy_s( &szText[dwLen - 1], 8192, "\r\n" );
 			WriteFile( hFile, szText, dwLen, &dwWritten, NULL );
 		}
 		CloseHandle( hFile );
@@ -222,6 +224,7 @@ HRESULT InitApp( HINSTANCE hInst, int nCmdShow )
 	ReleaseDC( g_hWnd, hDC );
 	g_hBMPold = (HBITMAP) SelectObject( g_hDCBMP, g_hBMP );
 
+	// ウィンドウを表示する
 	ShowWindow( g_hWnd, nCmdShow );
 	UpdateWindow( g_hWnd );
 
@@ -231,7 +234,7 @@ HRESULT InitApp( HINSTANCE hInst, int nCmdShow )
 // アプリケーションの後始末
 HRESULT UninitApp()
 {
-	// 画面表示用のビットマップを開放する
+	// 画面表示用のビットマップを解放する
 	if ( g_hDCBMP || g_hBMP )
 	{
 		SelectObject( g_hDCBMP, g_hBMPold );

@@ -71,23 +71,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.3.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\include;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProgramW6432)\Azure Kinect SDK v1.4.0\sdk\windows-desktop\amd64\release\lib;$(ProgramW6432)\Azure Kinect Body Tracking SDK\sdk\windows-desktop\amd64\release\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
